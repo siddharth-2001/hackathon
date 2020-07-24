@@ -58,4 +58,3 @@ def login_user_api(request):
 def delete_user(request, pk):
     user = get_user_model().objects.get(id = pk)
     user.delete()
- 

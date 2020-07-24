@@ -47,7 +47,7 @@ class UpdatePasswordSerializer(serializers.ModelSerializer):
         else:
             print("error")
 
-class LoginUserApi(serializers.ModelSerializer):
+class LoginUserSerializer(serializers.ModelSerializer):
     username1 = serializers.CharField()
     password1 = serializers.CharField(style={'input_type': 'password'}, write_only=True)
     class Meta:
@@ -65,3 +65,8 @@ class LoginUserApi(serializers.ModelSerializer):
             login(request, check)
         else:
             print('error')
+
+class UserItemList(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['product_list']

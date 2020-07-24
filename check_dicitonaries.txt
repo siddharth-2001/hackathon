@@ -1,0 +1,46 @@
+    //signup dictionary
+    {
+        "username": "siddharth",
+        "email": "abc@gmail.com",
+        "contact": 9898989,
+        "budget": 9898,
+        "password": "langna159"
+    }
+    //change password dictionary
+    {
+        "new_password": "langna@159",
+        "email": ""
+    }
+    // login dictionary 
+    {
+        "username1": "siddh",
+        "password1": "password123"
+    }
+    //add a product dictionary
+    {
+        "name": "shoe",
+        "brand": "nike",
+        "category": "shoe",
+        "count_stock": 60,
+        "price": 60.89,
+        "description": "nice shoe",
+        "review_list": "[]",
+        "rating": 0
+ 
+    }
+    // purchase product dictionary
+    {
+        "userid": 6,
+        "prodid": 2
+    }
+  
+   //review dictionary
+    {
+        "review": "really really great",
+        "prodid": 1
+    }
+   // add rating dictionary
+     {
+        "rate": 5,
+        "prodid": 2
+    }

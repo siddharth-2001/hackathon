@@ -8,4 +8,7 @@ class Products(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     description = models.TextField()
     review_list = models.TextField()
-    rating = models.IntegerField()
+    rating = models.FloatField()
+
+    def __str__(self):
+        return self.name

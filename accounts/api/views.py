@@ -1,18 +1,18 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.contrib.auth import get_user_model
-from .serializers import UserListSerializer, UserCreateSerializer, UpdatePasswordSerializer, LoginUserApi
+from .serializers import UserListSerializer, UserCreateSerializer, UpdatePasswordSerializer, LoginUserSerializer, UserItemList
 from rest_framework.authtoken.models import Token
 
 
 @api_view(['GET'])
-def UserListApi(request):
+def user_list_api(request):
     User = get_user_model().objects.all()
     serializer = UserListSerializer(User, many = True)
     return Response(serializer.data)
 
 @api_view(['POST'])
-def UserCreateApi(request):
+def user_create_api(request):
     data = {}
     serial = UserCreateSerializer(data=request.data)
     if serial.is_valid():
@@ -38,7 +38,7 @@ def change_password_api(request):
 @api_view(['POST'])
 def login_user_api(request):
     data = {}
-    serializer = LoginUserApi(data=request.data)
+    serializer = LoginUserSerializer(data=request.data)
     if serializer.is_valid():
         serializer.login(request)
         tok_check = list(Token.objects.filter(user=request.user))
@@ -58,3 +58,9 @@ def login_user_api(request):
 def delete_user(request, pk):
     user = get_user_model().objects.get(id = pk)
     user.delete()
+
+@api_view(['GET'])
+def view_product_list(request, pk):
+    user = get_user_model().objects.get(id = pk)
+    serializer = UserItemList(instance = user)
+    return Response(serializer.data)

@@ -53,4 +53,9 @@ def login_user_api(request):
         print(serializer.errors)
         data['response'] = "Some errorr has occurred"
     return Response(data)
-    
+
+@api_view(['DELETE'])
+def delete_user(request, pk):
+    user = get_user_model().objects.get(id = pk)
+    user.delete()
+ 

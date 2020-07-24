@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import UserListApi, UserCreateApi, change_password_api, login_user_api
+from .views import UserListApi, UserCreateApi, change_password_api, login_user_api, delete_user
  
 app_name = 'accounts'
 
@@ -8,4 +8,5 @@ urlpatterns = [
     path('platform/signup', UserCreateApi, name = 'sign-up'),
     path('platform/changePassword/<int:pk>', change_password_api, name= 'change-password' ),
     path('platform/login', login_user_api, name='login'),
+    path('platform/deleteUser/<int:pk>', delete_user, name = 'delete-user')
 ]

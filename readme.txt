@@ -19,3 +19,8 @@ So to run them correctly you need to specify the id of the object you want to ed
 like:
     changePassword/(id)
     deleteUser/(id)
+
+Also the user product list displays the id of the products added
+superuser account
+username = siddh
+password = password123

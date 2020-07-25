@@ -24,3 +24,26 @@ Also the user product list displays the id of the products added
 superuser account
 username = siddh
 password = password123
+
+
+Working url routes:
+
+
+path('platform/users', user_list_api, name = 'all-users'),
+    path('platform/signup', user_create_api, name = 'sign-up'),
+    path('platform/changePassword/<int:pk>', change_password_api, name= 'change-password' ),
+    path('platform/login', login_user_api, name='login'),
+    path('platform/deleteUser/<int:pk>', delete_user, name = 'delete-user'),
+    path('platform/<int:pk>/products',view_product_list, name='list-products')
+
+
+ path("platform/products", list_all_products, name='all-items' ),
+    path("platform/products/create", create_product, name='create-item' ),
+    path('platform/products/<int:pk>', view_product, name='view-product' ),
+    path('platform/products/purchase', purchase_product, name='add-prod'),
+    path('platform/products/review', add_review, name='add-review'),
+    path('platform/products/<int:pk>/reviews', get_all_review, name='all-review'),
+    path('platform/deleteProduct/<int:pk>', delete_product, name = 'del-product'),
+    path('platform/products/rate', rate_product, name = 'rate'),
+
+where substitue <int:pk> for orimary key or the id of the user or the product.

@@ -24,7 +24,7 @@ def user_create_api(request):
         data['response'] = "Some error has occurred"
     return Response(data)
 @api_view(['PUT'])
-def change_password_api(request):
+def change_password_api(request, pk):
     data = {}
     user = get_user_model().objects.get(id= pk )
     serializer = UpdatePasswordSerializer(instance = user, data = request.data) 
